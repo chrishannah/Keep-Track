@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9D0057C11DE8555C00591D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057C01DE8555C00591D05 /* AppDelegate.swift */; };
+		9D0057C31DE8555C00591D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057C21DE8555C00591D05 /* ViewController.swift */; };
+		9D0057C61DE8555C00591D05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C41DE8555C00591D05 /* Main.storyboard */; };
+		9D0057C81DE8555C00591D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C71DE8555C00591D05 /* Assets.xcassets */; };
+		9D0057CB1DE8555C00591D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */; };
+		9D0057D61DE8555C00591D05 /* Keep_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057D51DE8555C00591D05 /* Keep_TrackTests.swift */; };
+		9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9D0057D21DE8555C00591D05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D0057B51DE8555B00591D05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D0057BC1DE8555B00591D05;
+			remoteInfo = "Keep Track";
+		};
+		9D0057DD1DE8555C00591D05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D0057B51DE8555B00591D05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D0057BC1DE8555B00591D05;
+			remoteInfo = "Keep Track";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9D0057BD1DE8555C00591D05 /* Keep Track.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Track.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0057C01DE8555C00591D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D0057C21DE8555C00591D05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D0057C51DE8555C00591D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D0057C71DE8555C00591D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D0057CA1DE8555C00591D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D0057CC1DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D0057D11DE8555C00591D05 /* Keep TrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep TrackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0057D51DE8555C00591D05 /* Keep_TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_TrackTests.swift; sourceTree = "<group>"; };
+		9D0057D71DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D0057DC1DE8555C00591D05 /* Keep TrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep TrackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_TrackUITests.swift; sourceTree = "<group>"; };
+		9D0057E21DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D0057BA1DE8555B00591D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057CE1DE8555C00591D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057D91DE8555C00591D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D0057B41DE8555B00591D05 = {
+			isa = PBXGroup;
+			children = (
+				9D0057BF1DE8555C00591D05 /* Keep Track */,
+				9D0057D41DE8555C00591D05 /* Keep TrackTests */,
+				9D0057DF1DE8555C00591D05 /* Keep TrackUITests */,
+				9D0057BE1DE8555C00591D05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9D0057BE1DE8555C00591D05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D0057BD1DE8555C00591D05 /* Keep Track.app */,
+				9D0057D11DE8555C00591D05 /* Keep TrackTests.xctest */,
+				9D0057DC1DE8555C00591D05 /* Keep TrackUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D0057BF1DE8555C00591D05 /* Keep Track */ = {
+			isa = PBXGroup;
+			children = (
+				9D0057C01DE8555C00591D05 /* AppDelegate.swift */,
+				9D0057C21DE8555C00591D05 /* ViewController.swift */,
+				9D0057C41DE8555C00591D05 /* Main.storyboard */,
+				9D0057C71DE8555C00591D05 /* Assets.xcassets */,
+				9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */,
+				9D0057CC1DE8555C00591D05 /* Info.plist */,
+			);
+			path = "Keep Track";
+			sourceTree = "<group>";
+		};
+		9D0057D41DE8555C00591D05 /* Keep TrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				9D0057D51DE8555C00591D05 /* Keep_TrackTests.swift */,
+				9D0057D71DE8555C00591D05 /* Info.plist */,
+			);
+			path = "Keep TrackTests";
+			sourceTree = "<group>";
+		};
+		9D0057DF1DE8555C00591D05 /* Keep TrackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */,
+				9D0057E21DE8555C00591D05 /* Info.plist */,
+			);
+			path = "Keep TrackUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D0057BC1DE8555B00591D05 /* Keep Track */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D0057E51DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep Track" */;
+			buildPhases = (
+				9D0057B91DE8555B00591D05 /* Sources */,
+				9D0057BA1DE8555B00591D05 /* Frameworks */,
+				9D0057BB1DE8555B00591D05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Keep Track";
+			productName = "Keep Track";
+			productReference = 9D0057BD1DE8555C00591D05 /* Keep Track.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9D0057D01DE8555C00591D05 /* Keep TrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D0057E81DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackTests" */;
+			buildPhases = (
+				9D0057CD1DE8555C00591D05 /* Sources */,
+				9D0057CE1DE8555C00591D05 /* Frameworks */,
+				9D0057CF1DE8555C00591D05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D0057D31DE8555C00591D05 /* PBXTargetDependency */,
+			);
+			name = "Keep TrackTests";
+			productName = "Keep TrackTests";
+			productReference = 9D0057D11DE8555C00591D05 /* Keep TrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9D0057DB1DE8555C00591D05 /* Keep TrackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D0057EB1DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackUITests" */;
+			buildPhases = (
+				9D0057D81DE8555C00591D05 /* Sources */,
+				9D0057D91DE8555C00591D05 /* Frameworks */,
+				9D0057DA1DE8555C00591D05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D0057DE1DE8555C00591D05 /* PBXTargetDependency */,
+			);
+			name = "Keep TrackUITests";
+			productName = "Keep TrackUITests";
+			productReference = 9D0057DC1DE8555C00591D05 /* Keep TrackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D0057B51DE8555B00591D05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Christopher Hannah";
+				TargetAttributes = {
+					9D0057BC1DE8555B00591D05 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 35H8Q2N6J9;
+						ProvisioningStyle = Automatic;
+					};
+					9D0057D01DE8555C00591D05 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 35H8Q2N6J9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D0057BC1DE8555B00591D05;
+					};
+					9D0057DB1DE8555C00591D05 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 35H8Q2N6J9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9D0057BC1DE8555B00591D05;
+					};
+				};
+			};
+			buildConfigurationList = 9D0057B81DE8555B00591D05 /* Build configuration list for PBXProject "Keep Track" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D0057B41DE8555B00591D05;
+			productRefGroup = 9D0057BE1DE8555C00591D05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D0057BC1DE8555B00591D05 /* Keep Track */,
+				9D0057D01DE8555C00591D05 /* Keep TrackTests */,
+				9D0057DB1DE8555C00591D05 /* Keep TrackUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D0057BB1DE8555B00591D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0057CB1DE8555C00591D05 /* LaunchScreen.storyboard in Resources */,
+				9D0057C81DE8555C00591D05 /* Assets.xcassets in Resources */,
+				9D0057C61DE8555C00591D05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057CF1DE8555C00591D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057DA1DE8555C00591D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D0057B91DE8555B00591D05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0057C31DE8555C00591D05 /* ViewController.swift in Sources */,
+				9D0057C11DE8555C00591D05 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057CD1DE8555C00591D05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0057D61DE8555C00591D05 /* Keep_TrackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D0057D81DE8555C00591D05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D0057D31DE8555C00591D05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D0057BC1DE8555B00591D05 /* Keep Track */;
+			targetProxy = 9D0057D21DE8555C00591D05 /* PBXContainerItemProxy */;
+		};
+		9D0057DE1DE8555C00591D05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D0057BC1DE8555B00591D05 /* Keep Track */;
+			targetProxy = 9D0057DD1DE8555C00591D05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9D0057C41DE8555C00591D05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D0057C51DE8555C00591D05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D0057CA1DE8555C00591D05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D0057E31DE8555C00591D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9D0057E41DE8555C00591D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D0057E61DE8555C00591D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep Track/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-Track";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9D0057E71DE8555C00591D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep Track/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-Track";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9D0057E91DE8555C00591D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep TrackTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-TrackTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Track.app/Keep Track";
+			};
+			name = Debug;
+		};
+		9D0057EA1DE8555C00591D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep TrackTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-TrackTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keep Track.app/Keep Track";
+			};
+			name = Release;
+		};
+		9D0057EC1DE8555C00591D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep TrackUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-TrackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Keep Track";
+			};
+			name = Debug;
+		};
+		9D0057ED1DE8555C00591D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				INFOPLIST_FILE = "Keep TrackUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-TrackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Keep Track";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D0057B81DE8555B00591D05 /* Build configuration list for PBXProject "Keep Track" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D0057E31DE8555C00591D05 /* Debug */,
+				9D0057E41DE8555C00591D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D0057E51DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep Track" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D0057E61DE8555C00591D05 /* Debug */,
+				9D0057E71DE8555C00591D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9D0057E81DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D0057E91DE8555C00591D05 /* Debug */,
+				9D0057EA1DE8555C00591D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9D0057EB1DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D0057EC1DE8555C00591D05 /* Debug */,
+				9D0057ED1DE8555C00591D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D0057B51DE8555B00591D05 /* Project object */;
+}
