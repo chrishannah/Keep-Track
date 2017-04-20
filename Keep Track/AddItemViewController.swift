@@ -54,8 +54,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             object: nil)
         if itemToEdit != nil {
             loadItem(item: itemToEdit!)
-            loadUI(true)
         }
+        loadUI(itemToEdit != nil)
     }
     
     func loadItem(item: Item) {
