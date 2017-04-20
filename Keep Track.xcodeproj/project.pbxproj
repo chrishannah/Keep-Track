@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9D0057C11DE8555C00591D05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057C01DE8555C00591D05 /* AppDelegate.swift */; };
-		9D0057C31DE8555C00591D05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057C21DE8555C00591D05 /* ViewController.swift */; };
 		9D0057C61DE8555C00591D05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C41DE8555C00591D05 /* Main.storyboard */; };
 		9D0057C81DE8555C00591D05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C71DE8555C00591D05 /* Assets.xcassets */; };
 		9D0057CB1DE8555C00591D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */; };
 		9D0057D61DE8555C00591D05 /* Keep_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057D51DE8555C00591D05 /* Keep_TrackTests.swift */; };
 		9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */; };
+		9D7962D71E64633300259680 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D61E64633300259680 /* Database.swift */; };
+		9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D81E64A31000259680 /* AddItemViewController.swift */; };
+		9DBAF2101E40B2E400CE7A81 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */; };
+		9DBAF21A1E40B54C00CE7A81 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */; };
+		9DDAFA2F1EA7C5980019AE21 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDAFA2D1EA7C5980019AE21 /* RealmSwift.framework */; };
+		9DDAFA301EA7C59D0019AE21 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDAFA2C1EA7C5980019AE21 /* Realm.framework */; };
+		9DDAFA311EA7C59D0019AE21 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDAFA2C1EA7C5980019AE21 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DDAFA331EA7C59D0019AE21 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDAFA2D1EA7C5980019AE21 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DDAFA361EA7C9800019AE21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDAFA351EA7C9800019AE21 /* MainViewController.swift */; };
+		9DE1B7601EA80D1D007B1194 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */; };
+		9DE347B21E6DAA7E008D70E0 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */; };
+		9DFF39351EA9069E004EA005 /* ImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF39341EA9069E004EA005 /* ImagePicker.framework */; };
+		9DFF39361EA9069E004EA005 /* ImagePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF39341EA9069E004EA005 /* ImagePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +45,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9DDAFA341EA7C59D0019AE21 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DDAFA331EA7C59D0019AE21 /* RealmSwift.framework in Embed Frameworks */,
+				9DFF39361EA9069E004EA005 /* ImagePicker.framework in Embed Frameworks */,
+				9DDAFA311EA7C59D0019AE21 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9D0057BD1DE8555C00591D05 /* Keep Track.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keep Track.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0057C01DE8555C00591D05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D0057C21DE8555C00591D05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D0057C51DE8555C00591D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D0057C71DE8555C00591D05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D0057CA1DE8555C00591D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +74,16 @@
 		9D0057DC1DE8555C00591D05 /* Keep TrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep TrackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_TrackUITests.swift; sourceTree = "<group>"; };
 		9D0057E21DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D7962D61E64633300259680 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		9D7962D81E64A31000259680 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9DDAFA2C1EA7C5980019AE21 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		9DDAFA2D1EA7C5980019AE21 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		9DDAFA351EA7C9800019AE21 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		9DFF39341EA9069E004EA005 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImagePicker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +91,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE1B7601EA80D1D007B1194 /* MobileCoreServices.framework in Frameworks */,
+				9DDAFA301EA7C59D0019AE21 /* Realm.framework in Frameworks */,
+				9DFF39351EA9069E004EA005 /* ImagePicker.framework in Frameworks */,
+				9DDAFA2F1EA7C5980019AE21 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +122,7 @@
 				9D0057D41DE8555C00591D05 /* Keep TrackTests */,
 				9D0057DF1DE8555C00591D05 /* Keep TrackUITests */,
 				9D0057BE1DE8555C00591D05 /* Products */,
+				9DE1B75E1EA80D1D007B1194 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +140,11 @@
 			isa = PBXGroup;
 			children = (
 				9D0057C01DE8555C00591D05 /* AppDelegate.swift */,
-				9D0057C21DE8555C00591D05 /* ViewController.swift */,
 				9D0057C41DE8555C00591D05 /* Main.storyboard */,
+				9DDAFA351EA7C9800019AE21 /* MainViewController.swift */,
+				9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */,
+				9D60F78F1E6D7DA800CBE043 /* Item */,
+				9D7962D61E64633300259680 /* Database.swift */,
 				9D0057C71DE8555C00591D05 /* Assets.xcassets */,
 				9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */,
 				9D0057CC1DE8555C00591D05 /* Info.plist */,
@@ -125,6 +170,35 @@
 			path = "Keep TrackUITests";
 			sourceTree = "<group>";
 		};
+		9D60F78F1E6D7DA800CBE043 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				9D7962D81E64A31000259680 /* AddItemViewController.swift */,
+				9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
+		9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */ = {
+			isa = PBXGroup;
+			children = (
+				9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */,
+				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
+			);
+			name = Inventory/Collection;
+			sourceTree = "<group>";
+		};
+		9DE1B75E1EA80D1D007B1194 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF39341EA9069E004EA005 /* ImagePicker.framework */,
+				9DDAFA2C1EA7C5980019AE21 /* Realm.framework */,
+				9DDAFA2D1EA7C5980019AE21 /* RealmSwift.framework */,
+				9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +209,7 @@
 				9D0057B91DE8555B00591D05 /* Sources */,
 				9D0057BA1DE8555B00591D05 /* Frameworks */,
 				9D0057BB1DE8555B00591D05 /* Resources */,
+				9DDAFA341EA7C59D0019AE21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,7 +263,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Christopher Hannah";
 				TargetAttributes = {
 					9D0057BC1DE8555B00591D05 = {
@@ -262,8 +337,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D0057C31DE8555C00591D05 /* ViewController.swift in Sources */,
+				9DDAFA361EA7C9800019AE21 /* MainViewController.swift in Sources */,
+				9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */,
+				9DBAF21A1E40B54C00CE7A81 /* CollectionViewCell.swift in Sources */,
+				9DBAF2101E40B2E400CE7A81 /* InventoryViewController.swift in Sources */,
+				9D7962D71E64633300259680 /* Database.swift in Sources */,
 				9D0057C11DE8555C00591D05 /* AppDelegate.swift in Sources */,
+				9DE347B21E6DAA7E008D70E0 /* ItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +416,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -385,6 +466,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -414,6 +496,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Keep Track/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-Track";
@@ -427,6 +513,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 35H8Q2N6J9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Keep Track/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Christopher-Hannah.Keep-Track";
@@ -512,6 +602,7 @@
 				9D0057E71DE8555C00591D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D0057E81DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +611,7 @@
 				9D0057EA1DE8555C00591D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D0057EB1DE8555C00591D05 /* Build configuration list for PBXNativeTarget "Keep TrackUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +620,7 @@
 				9D0057ED1DE8555C00591D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
