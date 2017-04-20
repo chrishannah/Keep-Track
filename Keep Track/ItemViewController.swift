@@ -58,6 +58,9 @@ class ItemViewController: UIViewController {
         if let imageData = item.image {
             let image = UIImage(data: imageData as Data)
             imageView.image = image
+        } else {
+            let image = UIImage(named: "NoImage")
+            imageView.image = image
         }
 
     }
