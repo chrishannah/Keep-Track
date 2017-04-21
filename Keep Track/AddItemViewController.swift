@@ -128,29 +128,32 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         item.notes = notesTextView.text!
         item.dateAdded = NSDate()
         
-        if itemHasImage {
-            if let image = imageView.image {
-                imageData = UIImagePNGRepresentation(image)
-                item.image = imageData as NSData?}
-        }
-        
-        
-        if isEditingItem {
-            
-            try! self.realm.write {
-                itemToEdit?.name = item.name
-                itemToEdit?.notes = item.notes
-                itemToEdit?.image = item.image
-            }
-            self.dismiss(animated: true, completion: nil)
+        // Check for missing name, if blank present an error dialog
+        if (item.name == "") {
+            let alertController = UIAlertController(title: "Error", message: "Item must have a name.", preferredStyle: .alert)
+            let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alertController.addAction(okayButton)
+            present(alertController, animated: true, completion: nil)
         } else {
-            try! self.realm.write {
-                self.realm.add(item, update: false)
+            if itemHasImage {
+                if let image = imageView.image {
+                    imageData = UIImagePNGRepresentation(image)
+                    item.image = imageData as NSData?}
             }
-            self.dismiss(animated: true, completion: nil)
-
+            if isEditingItem {
+                try! self.realm.write {
+                    itemToEdit?.name = item.name
+                    itemToEdit?.notes = item.notes
+                    itemToEdit?.image = item.image
+                }
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                try! self.realm.write {
+                    self.realm.add(item, update: false)
+                }
+                self.dismiss(animated: true, completion: nil)
+            }
         }
-
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
