@@ -102,6 +102,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xKN-Bw-7jR" secondAttribute="bottom" id="UjA-vc-Ej9"/>
                             <constraint firstAttribute="trailing" secondItem="xKN-Bw-7jR" secondAttribute="trailing" id="dB8-6I-bF5"/>
@@ -112,6 +113,7 @@
                             <constraint firstItem="tLY-2I-zXj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zUJ-rD-Eeg"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="inventoryCollectionView" destination="xKN-Bw-7jR" id="6wF-9G-vQe"/>
                     </connections>
