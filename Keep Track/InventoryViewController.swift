@@ -22,8 +22,9 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         self.inventoryCollectionView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
