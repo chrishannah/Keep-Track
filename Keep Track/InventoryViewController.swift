@@ -13,6 +13,8 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
 
     @IBOutlet weak var inventoryCollectionView: UICollectionView!
     
+    @IBOutlet weak var inventoryTitle: UINavigationBar!
+    
     let realm = try! Realm()
     var items: Results<Item> {
         get {
@@ -27,6 +29,12 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         self.inventoryCollectionView.reloadData()
+        
+        if collection != nil {
+            inventoryTitle.topItem?.title = collection?.name
+        } else {
+            inventoryTitle.topItem?.title = "All Items"
+        }
         
     }
     

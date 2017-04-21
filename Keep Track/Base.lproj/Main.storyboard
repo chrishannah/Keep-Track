@@ -119,6 +119,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="inventoryCollectionView" destination="xKN-Bw-7jR" id="6wF-9G-vQe"/>
+                        <outlet property="inventoryTitle" destination="tLY-2I-zXj" id="XFz-f1-vSF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
