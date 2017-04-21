@@ -42,6 +42,10 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         self.present(addItemVC, animated: true, completion: nil)
     }
     
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: DataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
