@@ -20,9 +20,12 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         }
     }
     
+    var collection: Collection? = nil
+    
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         self.inventoryCollectionView.reloadData()
         
     }
@@ -31,23 +34,13 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewWillAppear(animated)
         self.inventoryCollectionView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let addItemVC = storyboard.instantiateViewController(withIdentifier: "AddItemViewController")
+        self.present(addItemVC, animated: true, completion: nil)
     }
-    */
     
     // MARK: DataSource
     
@@ -56,14 +49,26 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        if collection != nil {
+            return (collection?.items.count)!
+        } else {
+            return items.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CollectionViewCell = inventoryCollectionView.dequeueReusableCell(withReuseIdentifier: "defaultSquareCell", for: indexPath) as! CollectionViewCell
-        let item = items[indexPath.row]
-        cell.textLabel.text = item.name
-        if let imageData = item.image {
+        var item: Item? = nil
+        
+        if collection != nil {
+            item = (collection?.items[indexPath.row])!
+        } else {
+            item = items[indexPath.row]
+        }
+        
+        
+        cell.textLabel.text = item?.name
+        if let imageData = item?.image {
             cell.imageView.image = UIImage(data: imageData as Data)
         } else {
             let image = UIImage(named: "NoImage")
@@ -85,21 +90,10 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        try! self.realm.write {
-//            self.realm.delete(items[indexPath.row])
-//        }
-//        inventoryCollectionView.reloadData()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let itemVC: ItemViewController = storyboard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
         itemVC.item = items[indexPath.row]
         self.present(itemVC, animated: true, completion: nil)
-    }
-
-    @IBAction func addPressed(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let addItemVC = storyboard.instantiateViewController(withIdentifier: "AddItemViewController")
-        self.present(addItemVC, animated: true, completion: nil)
     }
 }

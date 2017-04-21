@@ -7,29 +7,95 @@
 //
 
 import UIKit
+import RealmSwift
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionCollectionView: UICollectionView!
+    
+    let realm = try! Realm()
+    var collections: Results<Collection> {
+        get {
+            return self.realm.objects(Collection.self)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        collectionCollectionView.reloadData()
     }
-    */
+    
+    @IBAction func addCollectionPressed(_ sender: Any) {
+        let collection = Collection()
+        collection.name = "test"
+        let item = Item()
+        item.name = "test item"
+        item.notes = "haha"
+        collection.items.append(item)
+        try! self.realm.write {
+            self.realm.add(collection, update: false)
+        }
+        collectionCollectionView.reloadData()
+    }
+    
+    // MARK: DataSource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collections.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CollectionViewCell = collectionCollectionView.dequeueReusableCell(withReuseIdentifier: "defaultSquareCell", for: indexPath) as! CollectionViewCell
+        
+        let collection:Collection
+        
+        if indexPath.row == collections.count {
+            collection = Collection()
+            collection.name = "All Items"
+        } else {
+            collection = collections[indexPath.row]
+        }
+        cell.textLabel.text = collection.name
+        
+        if let imageData = collection.image {
+            cell.imageView.image = UIImage(data: imageData as Data)
+        } else {
+            let image = UIImage(named: "NoImage")
+            cell.imageView.image = image
+        }
+        cell.layer.cornerRadius = 4
+        cell.contentView.layer.cornerRadius = 4
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.masksToBounds = true
+        
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let collectionVC: InventoryViewController = storyboard.instantiateViewController(withIdentifier: "InventoryViewController") as! InventoryViewController
+        
+        if indexPath.row != collections.count {
+            collectionVC.collection = collections[indexPath.row]
+        }
 
+        self.present(collectionVC, animated: true, completion: nil)
+    }
 }
