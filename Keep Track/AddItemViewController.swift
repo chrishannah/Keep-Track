@@ -25,6 +25,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     var isNameBeingEdited = false
     var isNotesBeingEdited = true
     
+    var collection: Collection? = nil
+    
     var itemHasImage = false
     
     var isEditingItem: Bool = false
@@ -148,8 +150,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                 }
                 self.dismiss(animated: true, completion: nil)
             } else {
-                try! self.realm.write {
-                    self.realm.add(item, update: false)
+                if collection != nil {
+                    try! self.realm.write {
+                        collection?.items.append(item)
+                    }
+                } else {
+                    try! self.realm.write {
+                        self.realm.add(item, update: false)
+                    }
+
                 }
                 self.dismiss(animated: true, completion: nil)
             }

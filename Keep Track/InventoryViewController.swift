@@ -38,7 +38,12 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBAction func addPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let addItemVC = storyboard.instantiateViewController(withIdentifier: "AddItemViewController")
+        let addItemVC: AddItemViewController = (storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as? AddItemViewController)!
+        
+        if collection != nil {
+            addItemVC.collection = collection
+        }
+        
         self.present(addItemVC, animated: true, completion: nil)
     }
     
