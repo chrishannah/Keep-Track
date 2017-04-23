@@ -68,7 +68,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
             cell.backgroundColor = UIColor.white
             cell.textLabel.textColor = UIColor.darkGray
         }
-        cell.textLabel.text = collection.name
+        cell.textLabel.text = collection.name.capitalizingFirstLetter()
         
         cell.layer.cornerRadius = 4
         cell.contentView.layer.cornerRadius = 4

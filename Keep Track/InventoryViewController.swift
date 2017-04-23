@@ -31,7 +31,7 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         self.inventoryCollectionView.reloadData()
         
         if collection != nil {
-            inventoryTitle.topItem?.title = collection?.name
+            inventoryTitle.topItem?.title = collection?.name.capitalizingFirstLetter()
         } else {
             inventoryTitle.topItem?.title = "All Items"
         }
@@ -83,8 +83,8 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
             item = items[indexPath.row]
         }
         
+        cell.textLabel.text = item?.name.capitalizingFirstLetter()
         
-        cell.textLabel.text = item?.name
         if let imageData = item?.image {
             cell.imageView.image = UIImage(data: imageData as Data)
         } else {

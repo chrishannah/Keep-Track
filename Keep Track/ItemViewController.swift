@@ -40,7 +40,7 @@ class ItemViewController: UIViewController {
     }
     
     func loadItem(item: Item) {
-        navigationTitleItem.title = item.name
+        navigationTitleItem.title = item.name.capitalizingFirstLetter()
         let date = item.dateAdded
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
