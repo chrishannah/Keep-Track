@@ -74,7 +74,7 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CollectionViewCell = inventoryCollectionView.dequeueReusableCell(withReuseIdentifier: "defaultSquareCell", for: indexPath) as! CollectionViewCell
+        let cell: ItemViewCell = inventoryCollectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! ItemViewCell
         var item: Item? = nil
         
         if collection != nil {

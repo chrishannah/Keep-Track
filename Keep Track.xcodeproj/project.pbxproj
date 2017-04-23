@@ -13,6 +13,7 @@
 		9D0057CB1DE8555C00591D05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */; };
 		9D0057D61DE8555C00591D05 /* Keep_TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057D51DE8555C00591D05 /* Keep_TrackTests.swift */; };
 		9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */; };
+		9D24FBE51EAC3EED007E3C5E /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */; };
 		9D7962D71E64633300259680 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D61E64633300259680 /* Database.swift */; };
 		9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D81E64A31000259680 /* AddItemViewController.swift */; };
 		9DBAF2101E40B2E400CE7A81 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */; };
@@ -74,6 +75,7 @@
 		9D0057DC1DE8555C00591D05 /* Keep TrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Keep TrackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keep_TrackUITests.swift; sourceTree = "<group>"; };
 		9D0057E21DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		9D7962D61E64633300259680 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9D7962D81E64A31000259680 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,8 @@
 			children = (
 				9D0057C01DE8555C00591D05 /* AppDelegate.swift */,
 				9D0057C41DE8555C00591D05 /* Main.storyboard */,
+				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
+				9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */,
 				9D2D08D71EAA32450083ABE9 /* Main/Collections */,
 				9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */,
 				9D60F78F1E6D7DA800CBE043 /* Item */,
@@ -191,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */,
-				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
 			);
 			name = Inventory/Collection;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				9D7962D71E64633300259680 /* Database.swift in Sources */,
 				9D0057C11DE8555C00591D05 /* AppDelegate.swift in Sources */,
 				9DE347B21E6DAA7E008D70E0 /* ItemViewController.swift in Sources */,
+				9D24FBE51EAC3EED007E3C5E /* ItemViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -54,7 +54,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CollectionViewCell = collectionCollectionView.dequeueReusableCell(withReuseIdentifier: "defaultSquareCell", for: indexPath) as! CollectionViewCell
+        let cell: CollectionViewCell = collectionCollectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
         
         let collection:Collection
         
@@ -66,12 +66,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         }
         cell.textLabel.text = collection.name
         
-        if let imageData = collection.image {
-            cell.imageView.image = UIImage(data: imageData as Data)
-        } else {
-            let image = UIImage(named: "NoImage")
-            cell.imageView.image = image
-        }
         cell.layer.cornerRadius = 4
         cell.contentView.layer.cornerRadius = 4
         cell.contentView.layer.borderWidth = 1.0
