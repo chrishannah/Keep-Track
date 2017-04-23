@@ -61,8 +61,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
         if indexPath.row == collections.count {
             collection = Collection()
             collection.name = "All Items"
+            cell.backgroundColor = UIColor.darkGray
+            cell.textLabel.textColor = UIColor.white
         } else {
             collection = collections[indexPath.row]
+            cell.backgroundColor = UIColor.white
+            cell.textLabel.textColor = UIColor.darkGray
         }
         cell.textLabel.text = collection.name
         
