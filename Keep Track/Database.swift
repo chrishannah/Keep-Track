@@ -19,6 +19,5 @@ class Item: Object {
 
 class Collection: Object {
     dynamic var name = ""
-    dynamic var image: NSData?
     let items = List<Item>()
 }

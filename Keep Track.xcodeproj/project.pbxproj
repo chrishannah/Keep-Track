@@ -142,9 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0057C01DE8555C00591D05 /* AppDelegate.swift */,
-				9D0057C41DE8555C00591D05 /* Main.storyboard */,
-				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
-				9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */,
+				9D24FBE61EAC40D9007E3C5E /* Interface */,
 				9D2D08D71EAA32450083ABE9 /* Main/Collections */,
 				9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */,
 				9D60F78F1E6D7DA800CBE043 /* Item */,
@@ -172,6 +170,16 @@
 				9D0057E21DE8555C00591D05 /* Info.plist */,
 			);
 			path = "Keep TrackUITests";
+			sourceTree = "<group>";
+		};
+		9D24FBE61EAC40D9007E3C5E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9D0057C41DE8555C00591D05 /* Main.storyboard */,
+				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
+				9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */,
+			);
+			name = Interface;
 			sourceTree = "<group>";
 		};
 		9D2D08D71EAA32450083ABE9 /* Main/Collections */ = {
