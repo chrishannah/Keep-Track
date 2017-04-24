@@ -50,9 +50,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
         self.present(collectionVC, animated: true, completion: nil)
-        
-        // Reload UI after returning from the view
-        loadUI()
     }
     
     // MARK: UICollectionViewDataSource
