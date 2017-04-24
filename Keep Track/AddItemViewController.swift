@@ -260,6 +260,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.dismiss(animated: true, completion: nil)
         if images.count > 0 {
             imageView.image = images[0]
+            itemHasImage = true
         }
     }
     
@@ -271,6 +272,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.dismiss(animated: true, completion: nil)
         if images.count > 0 {
             imageView.image = images[0]
+            itemHasImage = true
         }
     }
     
