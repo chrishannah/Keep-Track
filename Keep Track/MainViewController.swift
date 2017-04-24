@@ -31,15 +31,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
     }
     
     @IBAction func addCollectionPressed(_ sender: Any) {
-        let collection = Collection()
-        collection.name = "test"
-        let item = Item()
-        item.name = "test item"
-        item.notes = "haha"
-        collection.items.append(item)
-        try! self.realm.write {
-            self.realm.add(collection, update: false)
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
+        self.present(collectionVC, animated: true, completion: nil)
         collectionCollectionView.reloadData()
     }
     

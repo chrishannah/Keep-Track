@@ -124,7 +124,87 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-251.25" y="-165.8450704225352"/>
+            <point key="canvasLocation" x="-291" y="-355"/>
+        </scene>
+        <!--Add Collection View Controller-->
+        <scene sceneID="sPC-jU-1gI">
+            <objects>
+                <viewController storyboardIdentifier="AddCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bos-hR-fGX" customClass="AddCollectionViewController" customModule="Keep_Track" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RQS-XY-7ca"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Hd-nJ-yoS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oha-oA-cdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQE-5I-ZFV">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kta-wp-hqr"/>
+                                </constraints>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <items>
+                                    <navigationItem title="Title" id="sWR-jq-eRb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aXh-vN-ube">
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="bos-hR-fGX" id="Vew-vu-UYc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="6ci-ou-J3J">
+                                            <connections>
+                                                <action selector="savePressed:" destination="bos-hR-fGX" id="v3u-4t-FFy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABV-zi-21n">
+                                <rect key="frame" x="8" y="113" width="304" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JAc-kV-2K3"/>
+                                    <constraint firstAttribute="height" constant="30" id="rXn-1R-Xiz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oao-OR-G0x" id="wa9-uv-qpf"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrN-gY-4c5">
+                                <rect key="frame" x="8" y="84" width="304" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="LLU-Ei-4b7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="Oer-AR-y1e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQE-5I-ZFV" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" id="0af-4l-aCT"/>
+                            <constraint firstItem="jrN-gY-4c5" firstAttribute="top" secondItem="jQE-5I-ZFV" secondAttribute="bottom" constant="12" id="2ld-dA-NYm"/>
+                            <constraint firstItem="ABV-zi-21n" firstAttribute="top" secondItem="jrN-gY-4c5" secondAttribute="bottom" constant="12" id="Bjg-Kp-xOm"/>
+                            <constraint firstAttribute="trailing" secondItem="jQE-5I-ZFV" secondAttribute="trailing" id="OjL-HQ-OHS"/>
+                            <constraint firstAttribute="trailing" secondItem="jrN-gY-4c5" secondAttribute="trailing" constant="8" id="UZ4-98-WeS"/>
+                            <constraint firstItem="ABV-zi-21n" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" constant="8" id="W0Q-Qd-dkl"/>
+                            <constraint firstAttribute="trailing" secondItem="ABV-zi-21n" secondAttribute="trailing" constant="8" id="Xho-cS-wWJ"/>
+                            <constraint firstItem="jrN-gY-4c5" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" constant="8" id="aF6-Vr-7fA"/>
+                            <constraint firstItem="jQE-5I-ZFV" firstAttribute="top" secondItem="RQS-XY-7ca" secondAttribute="bottom" constant="8" id="f8o-Co-kcl"/>
+                            <constraint firstItem="ABV-zi-21n" firstAttribute="top" secondItem="jrN-gY-4c5" secondAttribute="bottom" constant="12" id="rb3-6C-WqM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="ABV-zi-21n" id="BHm-YQ-Kb9"/>
+                        <outlet property="navigationBar" destination="jQE-5I-ZFV" id="VCe-xc-lRV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2NH-dO-LBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301" y="297"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="xkx-ng-pt7">
@@ -280,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EQ-li-6DZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003" y="-164"/>
+            <point key="canvasLocation" x="369" y="307"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="NDB-R9-m0o">
@@ -370,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBW-0x-YYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1059.375" y="-166.90140845070422"/>
+            <point key="canvasLocation" x="-986" y="-356"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="YWR-6s-taf">
@@ -474,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rb-NF-JM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379" y="-165"/>
+            <point key="canvasLocation" x="371" y="-356"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@
 		9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */; };
 		9D24FBE51EAC3EED007E3C5E /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */; };
 		9D24FBE81EAC426F007E3C5E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D24FBE71EAC426F007E3C5E /* Extensions.swift */; };
+		9D58DAD51EAE1115003705BB /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */; };
 		9D7962D71E64633300259680 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D61E64633300259680 /* Database.swift */; };
 		9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D81E64A31000259680 /* AddItemViewController.swift */; };
 		9DBAF2101E40B2E400CE7A81 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */; };
@@ -78,6 +79,7 @@
 		9D0057E21DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		9D24FBE71EAC426F007E3C5E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		9D7962D61E64633300259680 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9D7962D81E64A31000259680 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9DDAFA351EA7C9800019AE21 /* MainViewController.swift */,
+				9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */,
 			);
 			name = Main/Collections;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			files = (
 				9DDAFA361EA7C9800019AE21 /* MainViewController.swift in Sources */,
 				9D24FBE81EAC426F007E3C5E /* Extensions.swift in Sources */,
+				9D58DAD51EAE1115003705BB /* AddCollectionViewController.swift in Sources */,
 				9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */,
 				9DBAF21A1E40B54C00CE7A81 /* CollectionViewCell.swift in Sources */,
 				9DBAF2101E40B2E400CE7A81 /* InventoryViewController.swift in Sources */,
