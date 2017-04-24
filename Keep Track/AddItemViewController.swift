@@ -12,33 +12,36 @@ import MobileCoreServices
 import ImagePicker
 
 class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, ImagePickerDelegate {
-
+    
+    // Realm Database
+    let realm = try! Realm()
+    
+    // UI Elements
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var titleBar: UINavigationBar!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
+    // Variables
     var isNameBeingEdited = false
     var isNotesBeingEdited = true
     
     var collection: Collection? = nil
     
     var itemHasImage = false
-    
     var isEditingItem: Bool = false
     var itemToEdit:Item? = nil
-    
-    let realm = try! Realm()
+
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Add Observers for any Keyboard events
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(_:)),
@@ -54,15 +57,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             selector: #selector(keyboardWillHide(_:)),
             name: .UIKeyboardWillHide,
             object: nil)
-        if itemToEdit != nil {
-            loadItem(item: itemToEdit!)
-        }
+        
+        // If an Item has been passed for editing, load it in the UI
         loadUI(itemToEdit != nil)
     }
     
     func loadItem(item: Item) {
         nameTextField.text = itemToEdit?.name
         notesTextView.text = itemToEdit?.notes
+        
         if let imageData = itemToEdit?.image {
             let image = UIImage(data: imageData as Data)
             imageView.image = image
@@ -75,11 +78,18 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     func loadUI(_ isEditingItem: Bool) {
+        // Load Item into the UI
+        if itemToEdit != nil {
+            loadItem(item: itemToEdit!)
+        }
+        
+        // Depending on the state of the item being added/edited, change the UI elements
         if isEditingItem {
             titleBar.topItem?.title = "Edit Item"
         } else {
             titleBar.topItem?.title = "Add Item"
         }
+        
         if itemHasImage {
             addPhotoButton.titleLabel?.text = "Change Photo"
         } else {
@@ -91,51 +101,47 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         NotificationCenter.default.removeObserver(self)
     }
 
+    // MARK: UIViewController Actions
+    
     @IBAction func addPhotoPressed(_ sender: Any) {
-        self.scrollView.scrollRectToVisible(imageView.frame,
-                                            animated: true)
-        
+        // Scroll the view to the active section, and resign other active controls
+        self.scrollView.scrollRectToVisible(imageView.frame, animated: true)
         nameTextField.resignFirstResponder()
         notesTextView.resignFirstResponder()
         
+        // Display the Image Picker
         let imagePickerController = ImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.imageLimit = 1
         present(imagePickerController, animated: true, completion: nil)
-        
-        
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.dismiss(animated: true, completion: nil)
-        print("picked")
     }
 
     @IBAction func addTaskPressed(_ sender: Any) {
-        self.scrollView.scrollRectToVisible(imageView.frame,
-                                            animated: true)
+        // Scroll the view to the active section, and resign other active controls
+        self.scrollView.scrollRectToVisible(imageView.frame, animated: true)
         nameTextField.resignFirstResponder()
         notesTextView.resignFirstResponder()
         
-        let imageData: Data?
-        
+        // Create a new item based on the data in the UI
         let item = Item()
         item.name = nameTextField.text!
         item.notes = notesTextView.text!
         item.dateAdded = NSDate()
+        let imageData: Data?
         
-        // Check for missing name, if blank present an error dialog
+        // Check for missing name, if blank display a warning
         if (item.name == "") {
             let alertController = UIAlertController(title: "Error", message: "Item must have a name.", preferredStyle: .alert)
             let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alertController.addAction(okayButton)
-            present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         } else {
             if itemHasImage {
                 if let image = imageView.image {
                     imageData = UIImagePNGRepresentation(image)
                     item.image = imageData as NSData?}
             }
+            // If the item was being edited, update that object, otherwise add a new one
             if isEditingItem {
                 try! self.realm.write {
                     itemToEdit?.name = item.name
@@ -152,7 +158,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                     try! self.realm.write {
                         self.realm.add(item, update: false)
                     }
-
                 }
                 self.dismiss(animated: true, completion: nil)
             }
@@ -166,14 +171,15 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     // MARK: Keyboard Management
     
     func keyboardWillShow(_ notification: NSNotification) {
+        // Move the view above the keyboard
         if let userInfo = notification.userInfo {
             let keyboardSize: CGRect = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             moveScrollViewForKeyboard(true, keyboardHeight: keyboardSize.height)
         }
-        
     }
     
     func keyboardWillChange(_ notification: NSNotification) {
+        // Depending on the state of the keyboard, move the view
         if let userInfo = notification.userInfo {
             let keyboardSize: CGRect = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             moveScrollViewForKeyboard(true, keyboardHeight: keyboardSize.height)
@@ -181,40 +187,36 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     func keyboardWillHide(_ notification: NSNotification) {
+        // Move the view back to it's original position
         moveScrollViewForKeyboard(false, keyboardHeight: 0)
     }
     
     func moveScrollViewForKeyboard(_ shouldMove: Bool, keyboardHeight: CGFloat?) {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.3)
-        print(shouldMove)
         
         if shouldMove {
             var visibleFrame = CGRect(x: 0, y: 0, width: 1, height: 1)
             scrollViewBottomConstraint.constant = -keyboardHeight!
+            
             if isNotesBeingEdited {
                 let frame = notesTextView.frame
                 visibleFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height)
-                print("move to notes")
-                
             } else if isNameBeingEdited {
                 let frame = nameTextField.frame
                 visibleFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height)
-                print("move to name")
             }
             scrollView.scrollRectToVisible(visibleFrame, animated: true)
         } else {
-            
             scrollViewBottomConstraint.constant = 0
             scrollView.scrollRectToVisible(imageView.frame, animated: true)
         }
-        
 
         UIView.commitAnimations()
-        
     }
     
     // MARK: UITextFieldDelegate
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
             isNameBeingEdited = true
@@ -249,6 +251,10 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     // MARK: ImagePickerDelegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         self.dismiss(animated: true, completion: nil)
