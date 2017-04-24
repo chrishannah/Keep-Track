@@ -30,12 +30,6 @@ class AddCollectionViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
     func loadUI() {
         if collectionToEdit != nil {
             loadCollection(collection: collectionToEdit!)
