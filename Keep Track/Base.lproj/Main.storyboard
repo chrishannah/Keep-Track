@@ -191,22 +191,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gh-FA-DUI">
+                                <rect key="frame" x="0.0" y="183" width="320" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.69994113869999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UHs-LO-8jP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="x7u-LI-Obx"/>
+                                </constraints>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="2ju-Bk-9H2" eventType="touchUpInside" id="ind-1U-8xV"/>
+                                    <action selector="deletePressed:" destination="bos-hR-fGX" eventType="touchUpInside" id="xDU-IG-mmb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jQE-5I-ZFV" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" id="0af-4l-aCT"/>
                             <constraint firstItem="jrN-gY-4c5" firstAttribute="top" secondItem="jQE-5I-ZFV" secondAttribute="bottom" constant="12" id="2ld-dA-NYm"/>
+                            <constraint firstItem="8gh-FA-DUI" firstAttribute="top" secondItem="ABV-zi-21n" secondAttribute="bottom" constant="40" id="4mt-OZ-5EX"/>
                             <constraint firstItem="ABV-zi-21n" firstAttribute="top" secondItem="jrN-gY-4c5" secondAttribute="bottom" constant="12" id="Bjg-Kp-xOm"/>
+                            <constraint firstItem="8gh-FA-DUI" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" id="II2-va-S98"/>
                             <constraint firstAttribute="trailing" secondItem="jQE-5I-ZFV" secondAttribute="trailing" id="OjL-HQ-OHS"/>
                             <constraint firstAttribute="trailing" secondItem="jrN-gY-4c5" secondAttribute="trailing" constant="8" id="UZ4-98-WeS"/>
                             <constraint firstItem="ABV-zi-21n" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" constant="8" id="W0Q-Qd-dkl"/>
                             <constraint firstAttribute="trailing" secondItem="ABV-zi-21n" secondAttribute="trailing" constant="8" id="Xho-cS-wWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="8gh-FA-DUI" secondAttribute="trailing" id="Yuh-Wc-ksC"/>
                             <constraint firstItem="jrN-gY-4c5" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" constant="8" id="aF6-Vr-7fA"/>
                             <constraint firstItem="jQE-5I-ZFV" firstAttribute="top" secondItem="RQS-XY-7ca" secondAttribute="bottom" constant="8" id="f8o-Co-kcl"/>
                             <constraint firstItem="ABV-zi-21n" firstAttribute="top" secondItem="jrN-gY-4c5" secondAttribute="bottom" constant="12" id="rb3-6C-WqM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="8gh-FA-DUI" id="l0e-fG-gdM"/>
                         <outlet property="nameTextField" destination="ABV-zi-21n" id="BHm-YQ-Kb9"/>
                         <outlet property="navigationBar" destination="jQE-5I-ZFV" id="VCe-xc-lRV"/>
                     </connections>

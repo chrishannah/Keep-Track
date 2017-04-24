@@ -12,9 +12,11 @@ import RealmSwift
 class AddCollectionViewController: UIViewController {
     
     var collectionToEdit: Collection? = nil
+    var inventoryViewController: InventoryViewController? = nil
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var deleteButton: UIButton!
     
     let realm = try! Realm()
     
@@ -31,11 +33,17 @@ class AddCollectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        
+    }
+    
+    func loadUI() {
         if collectionToEdit != nil {
             loadCollection(collection: collectionToEdit!)
             navigationBar.topItem?.title = "Edit Collection"
+            deleteButton.isEnabled = true
         } else {
             navigationBar.topItem?.title = "Add Collection"
+            deleteButton.isEnabled = false
         }
     }
     
@@ -70,5 +78,25 @@ class AddCollectionViewController: UIViewController {
             }
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        var collectionName = ""
+        if let name = collectionToEdit?.name {
+            collectionName = name
+        }
+        let alertController = UIAlertController(title: "Delete Collection", message: "Are you sure you want to delete \"\(collectionName)\"", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "OK", style: .default) { action in
+            try! self.realm.write {
+                self.realm.delete(self.collectionToEdit!)
+            }
+            self.inventoryViewController?.collectionDeleted = true
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { action in
+        }
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

@@ -24,29 +24,34 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     }
     
     var collection: Collection? = nil
+    var collectionDeleted = false
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inventoryCollectionView.reloadData()
-        
-        if collection != nil {
-            inventoryTitle.topItem?.title = collection?.name.capitalizingFirstLetter()
-        } else {
-            inventoryTitle.topItem?.title = "All Items"
-        }
-        
+        loadUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.inventoryCollectionView.reloadData()
+        if collectionDeleted {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            loadUI()
+        }
+        
+    }
+    
+    func loadUI() {
         if collection != nil {
             editButton.isEnabled = true
+            inventoryTitle.topItem?.title = collection?.name.capitalizingFirstLetter()
         } else {
             editButton.isEnabled = false
+            inventoryTitle.topItem?.title = "All Items"
         }
+        self.inventoryCollectionView.reloadData()
     }
     
     @IBAction func addPressed(_ sender: Any) {
@@ -59,6 +64,7 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         
         self.present(addItemVC, animated: true, completion: nil)
+        loadUI()
     }
     
     @IBAction func backPressed(_ sender: Any) {
@@ -69,8 +75,8 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
         collectionVC.collectionToEdit = collection
+        collectionVC.inventoryViewController = self
         self.present(collectionVC, animated: true, completion: nil)
-        inventoryCollectionView.reloadData()
     }
     
     // MARK: DataSource
@@ -122,7 +128,6 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let itemVC: ItemViewController = storyboard.instantiateViewController(withIdentifier: "ItemViewController") as! ItemViewController
         itemVC.item = items[indexPath.row]
         self.present(itemVC, animated: true, completion: nil)

@@ -101,8 +101,6 @@ class ItemViewController: UIViewController {
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
-        
-        
     }
 
 }
