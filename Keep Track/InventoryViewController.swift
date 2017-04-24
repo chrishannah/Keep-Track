@@ -14,6 +14,7 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var inventoryCollectionView: UICollectionView!
     
     @IBOutlet weak var inventoryTitle: UINavigationBar!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     let realm = try! Realm()
     var items: Results<Item> {
@@ -41,6 +42,11 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.inventoryCollectionView.reloadData()
+        if collection != nil {
+            editButton.isEnabled = true
+        } else {
+            editButton.isEnabled = false
+        }
     }
     
     @IBAction func addPressed(_ sender: Any) {
@@ -57,6 +63,14 @@ class InventoryViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBAction func backPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func editPressed(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
+        collectionVC.collectionToEdit = collection
+        self.present(collectionVC, animated: true, completion: nil)
+        inventoryCollectionView.reloadData()
     }
     
     // MARK: DataSource

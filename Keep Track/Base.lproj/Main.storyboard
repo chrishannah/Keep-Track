@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,11 +97,18 @@
                                                 <action selector="backPressed:" destination="BYZ-38-t0r" id="5Ut-l8-qLz"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lHa-ft-3LR">
-                                            <connections>
-                                                <action selector="addPressed:" destination="BYZ-38-t0r" id="PXY-4S-B51"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="add" id="lHa-ft-3LR">
+                                                <connections>
+                                                    <action selector="addPressed:" destination="BYZ-38-t0r" id="PXY-4S-B51"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="edit" id="odQ-JT-aFr">
+                                                <connections>
+                                                    <action selector="editPressed:" destination="BYZ-38-t0r" id="gqS-cP-X3S"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -118,6 +126,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="editButton" destination="odQ-JT-aFr" id="bK1-6k-nhp"/>
                         <outlet property="inventoryCollectionView" destination="xKN-Bw-7jR" id="6wF-9G-vQe"/>
                         <outlet property="inventoryTitle" destination="tLY-2I-zXj" id="XFz-f1-vSF"/>
                     </connections>

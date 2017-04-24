@@ -32,7 +32,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate,UICollectio
     
     @IBAction func addCollectionPressed(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
         self.present(collectionVC, animated: true, completion: nil)
         collectionCollectionView.reloadData()
