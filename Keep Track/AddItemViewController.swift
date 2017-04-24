@@ -87,12 +87,6 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if itemHasImage {
-            
-        }
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
