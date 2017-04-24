@@ -11,42 +11,47 @@ import RealmSwift
 
 class ItemViewController: UIViewController {
     
+    // Realm Database
+    let realm = try! Realm()
+    
+    // UI Elements
     @IBOutlet weak var navigationTitleItem: UINavigationItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
     
-    
+    // Variables
     var item: Item? = nil
     
-    let realm = try! Realm()
-
+    
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if item != nil {
-            loadItem(item: item!)
-        }
+        loadUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        loadUI()
+    }
+    
+    func loadUI() {
+        // If the item object exists, load it
         if item != nil {
             loadItem(item: item!)
         }
     }
     
     func loadItem(item: Item) {
+        // Load the item data into the UI
         navigationTitleItem.title = item.name.capitalizingFirstLetter()
+        
         let date = item.dateAdded
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
         dateFormatter.timeStyle = .short
         let stringOutput = dateFormatter.string(from: date as Date)
-        
         dateLabel.text = "Added: \(stringOutput)"
         
         if (item.notes == "") {
@@ -65,21 +70,23 @@ class ItemViewController: UIViewController {
 
     }
     
+    // MARK: UIViewController Actions
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func editItemPressed(_ sender: Any) {
+        // Load AddItemView with the current item so that it can be edited
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let addItemVC: AddItemViewController = storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
         addItemVC.isEditingItem = true
         addItemVC.itemToEdit = item!
         self.present(addItemVC, animated: true, completion: nil)
-        
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
+        // Display a warning regarding deleting the item
         var itemText = ""
         if let name = item?.name {
             itemText = name

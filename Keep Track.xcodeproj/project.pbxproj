@@ -146,15 +146,13 @@
 			isa = PBXGroup;
 			children = (
 				9D0057C01DE8555C00591D05 /* AppDelegate.swift */,
-				9D24FBE61EAC40D9007E3C5E /* Interface */,
+				9DBAF2151E40B50E00CE7A81 /* Main */,
 				9D2D08D71EAA32450083ABE9 /* Main/Collections */,
-				9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */,
 				9D60F78F1E6D7DA800CBE043 /* Item */,
-				9D7962D61E64633300259680 /* Database.swift */,
+				9D58DAD61EAE33A2003705BB /* Utilities */,
 				9D0057C71DE8555C00591D05 /* Assets.xcassets */,
 				9D0057C91DE8555C00591D05 /* LaunchScreen.storyboard */,
 				9D0057CC1DE8555C00591D05 /* Info.plist */,
-				9D24FBE71EAC426F007E3C5E /* Extensions.swift */,
 			);
 			path = "Keep Track";
 			sourceTree = "<group>";
@@ -177,40 +175,42 @@
 			path = "Keep TrackUITests";
 			sourceTree = "<group>";
 		};
-		9D24FBE61EAC40D9007E3C5E /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-				9D0057C41DE8555C00591D05 /* Main.storyboard */,
-				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
-				9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */,
-			);
-			name = Interface;
-			sourceTree = "<group>";
-		};
 		9D2D08D71EAA32450083ABE9 /* Main/Collections */ = {
 			isa = PBXGroup;
 			children = (
-				9DDAFA351EA7C9800019AE21 /* MainViewController.swift */,
+				9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */,
+				9DBAF2181E40B54C00CE7A81 /* CollectionViewCell.swift */,
 				9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */,
 			);
 			name = Main/Collections;
 			sourceTree = "<group>";
 		};
+		9D58DAD61EAE33A2003705BB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9D24FBE71EAC426F007E3C5E /* Extensions.swift */,
+				9D7962D61E64633300259680 /* Database.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		9D60F78F1E6D7DA800CBE043 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				9D7962D81E64A31000259680 /* AddItemViewController.swift */,
 				9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */,
+				9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */,
+				9D7962D81E64A31000259680 /* AddItemViewController.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
 		};
-		9DBAF2151E40B50E00CE7A81 /* Inventory/Collection */ = {
+		9DBAF2151E40B50E00CE7A81 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9DBAF20F1E40B2E400CE7A81 /* InventoryViewController.swift */,
+				9D0057C41DE8555C00591D05 /* Main.storyboard */,
+				9DDAFA351EA7C9800019AE21 /* MainViewController.swift */,
 			);
-			name = Inventory/Collection;
+			name = Main;
 			sourceTree = "<group>";
 		};
 		9DE1B75E1EA80D1D007B1194 /* Frameworks */ = {

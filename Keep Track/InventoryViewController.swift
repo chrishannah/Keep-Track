@@ -80,7 +80,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     @IBAction func editPressed(_ sender: Any) {
-        // Load AddItemView with the current collection so that it can be edited
+        // Load AddCollectionView with the current collection so that it can be edited
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
         collectionVC.collectionToEdit = collection
