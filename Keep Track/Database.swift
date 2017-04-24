@@ -11,13 +11,17 @@ import RealmSwift
 import UIKit
 
 class Item: Object {
+    
     dynamic var name = ""
     dynamic var notes = ""
     dynamic var image: NSData?
     dynamic var dateAdded = NSDate()
+    
 }
 
 class Collection: Object {
+    
     dynamic var name = ""
     let items = List<Item>()
+    
 }
