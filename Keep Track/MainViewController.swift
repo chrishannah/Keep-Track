@@ -9,20 +9,29 @@
 import UIKit
 import RealmSwift
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
     // Realm Database
     let realm = try! Realm()
     var collections: Results<Collection> {
         get {
-            // All collections currently stored in the database
-            return self.realm.objects(Collection.self)
+            // If currently searching, show the filtered results, otherwise show all collections
+            if isSearching {
+                // All collections currently stored in the database that have the query text in the name
+                return self.realm.objects(Collection.self).filter("name CONTAINS[c] '\(searchText)'")
+            } else {
+                // All collections currently stored in the database
+                return self.realm.objects(Collection.self)
+            }
         }
     }
     
     // UI Elements
     @IBOutlet weak var collectionCollectionView: UICollectionView!
     
+    // Variables
+    var isSearching: Bool = false
+    var searchText: String = ""
     
     // MARK: UIViewController
     
@@ -112,5 +121,55 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
 
         self.present(collectionVC, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: UISearchBarDelegate
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // Resign Keyboard
+        searchBar.resignFirstResponder()
+        
+        // Clear search filters and reset stated
+        searchText = ""
+        isSearching = false
+        
+        // Reload the objects
+        loadUI()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Resign Keyboard but keep filtered results showing
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Make sure state is set to searching
+        isSearching = true
+        
+        // Change search filter to the active text
+        self.searchText = searchText
+        
+        // Reload the objects
+        collectionCollectionView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        // Set state to filter out search results
+        isSearching = true
+        
+        // Reload the objects
+        collectionCollectionView.reloadData()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        // Set state to normal results
+        isSearching = false
+        
+        // Reload the objects
+        collectionCollectionView.reloadData()
+        
+        // Resign Keyboard
+        searchBar.resignFirstResponder()
     }
 }

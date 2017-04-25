@@ -9,14 +9,20 @@
 import UIKit
 import RealmSwift
 
-class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class InventoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
 
     // Realm Database
     let realm = try! Realm()
     var items: Results<Item> {
         get {
-            // All items currently stored in the database
-            return self.realm.objects(Item.self)
+            // If currently searching, show the filtered results, otherwise show all items
+            if isSearching {
+                // All items currently stored in the database that have the query text in the name
+                return self.realm.objects(Item.self).filter("name CONTAINS[c] '\(searchText)'")
+            } else {
+                // All items currently stored in the database
+                return self.realm.objects(Item.self)
+            }
         }
     }
     
@@ -27,7 +33,10 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     
     // Variables
     var collection: Collection? = nil
+    var filteredCollection: Collection? = nil
     var collectionDeleted = false
+    var isSearching: Bool = false
+    var searchText: String = ""
     
     
     // MARK: UIViewController
@@ -153,5 +162,55 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         itemVC.item = items[indexPath.row]
         
         self.present(itemVC, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: UISearchBarDelegate
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // Resign Keyboard
+        searchBar.resignFirstResponder()
+        
+        // Clear search filters and reset stated
+        searchText = ""
+        isSearching = false
+        
+        // Reload the objects
+        loadUI()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Resign Keyboard but keep filtered results showing
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Make sure state is set to searching
+        isSearching = true
+        
+        // Change search filter to the active text
+        self.searchText = searchText
+        
+        // Reload the objects
+        inventoryCollectionView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        // Set state to filter out search results
+        isSearching = true
+        
+        // Reload the objects
+        inventoryCollectionView.reloadData()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        // Set state to normal results
+        isSearching = false
+        
+        // Reload the objects
+        inventoryCollectionView.reloadData()
+        
+        // Resign Keyboard
+        searchBar.resignFirstResponder()
     }
 }
