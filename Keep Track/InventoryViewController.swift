@@ -156,6 +156,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         alertController.addAction(dateDesc)
         
         // Present the alert
+        alertController.view.tintColor = self.view.tintColor
         self.present(alertController, animated: true, completion: nil)
     }
     

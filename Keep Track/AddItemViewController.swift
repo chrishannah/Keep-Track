@@ -141,6 +141,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             let alertController = UIAlertController(title: "Error", message: "Item must have a name.", preferredStyle: .alert)
             let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alertController.addAction(okayButton)
+            alertController.view.tintColor = self.view.tintColor
             self.present(alertController, animated: true, completion: nil)
         } else {
             if itemHasImage {

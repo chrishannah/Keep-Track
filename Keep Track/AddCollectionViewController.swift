@@ -74,6 +74,7 @@ class AddCollectionViewController: UIViewController {
             let alertController = UIAlertController(title: "Error", message: "Collection must have a name.", preferredStyle: .alert)
             let okayButton = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alertController.addAction(okayButton)
+            alertController.view.tintColor = self.view.tintColor
             present(alertController, animated: true, completion: nil)
         } else {
             // If the collection was being edited, update that object, otherwise add a new one
@@ -111,6 +112,7 @@ class AddCollectionViewController: UIViewController {
         }
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
+        alertController.view.tintColor = self.view.tintColor
         self.present(alertController, animated: true, completion: nil)
     }
     

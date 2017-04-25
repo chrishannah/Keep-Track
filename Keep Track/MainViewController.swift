@@ -79,6 +79,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         alertController.addAction(nameDesc)
         
         // Present the alert
+        alertController.view.tintColor = self.view.tintColor
         self.present(alertController, animated: true, completion: nil)
     }
     

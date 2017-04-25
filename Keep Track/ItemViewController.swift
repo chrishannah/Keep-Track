@@ -102,6 +102,7 @@ class ItemViewController: UIViewController {
         }
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
+        alertController.view.tintColor = self.view.tintColor
         self.present(alertController, animated: true, completion: nil)
     }
 
