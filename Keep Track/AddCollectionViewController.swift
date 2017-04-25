@@ -36,7 +36,7 @@ class AddCollectionViewController: UIViewController {
         // Load the details of the current collection in to the UI
         if collectionToEdit != nil {
             loadCollection(collection: collectionToEdit!)
-            navigationBar.topItem?.title = "Edit Collection"
+            navigationBar.topItem?.title = "Edit \(collectionToEdit?.name.capitalizingFirstLetter() ?? "Collection")"
             deleteButton.isEnabled = true
         } else {
             navigationBar.topItem?.title = "Add Collection"

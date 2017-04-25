@@ -85,7 +85,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         // Depending on the state of the item being added/edited, change the UI elements
         if isEditingItem {
-            titleBar.topItem?.title = "Edit Item"
+            titleBar.topItem?.title = "Edit \(itemToEdit?.name.capitalizingFirstLetter() ?? "Item")"
         } else {
             titleBar.topItem?.title = "Add Item"
         }

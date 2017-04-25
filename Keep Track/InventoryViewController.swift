@@ -22,19 +22,19 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
                 // If currently searching, show the filtered results, otherwise show all items
                 if isSearching {
                     // All items currently stored in the database that have the query text in the name
-                    return (collection?.items.filter("name CONTAINS[c] '\(searchText)'"))!
+                    return (collection?.items.filter("name CONTAINS[c] '\(searchText)'"))!.sorted(byKeyPath: sortBy, ascending: sortAscending)
                 } else {
                     // All items currently stored in the database
-                    return (collection?.items.filter("name != ''"))!
+                    return (collection?.items.filter("name != ''"))!.sorted(byKeyPath: sortBy, ascending: sortAscending)
                 }
             } else {
                 // If currently searching, show the filtered results, otherwise show all items
                 if isSearching {
                     // All items currently stored in the database that have the query text in the name
-                    return self.realm.objects(Item.self).filter("name CONTAINS[c] '\(searchText)'")
+                    return self.realm.objects(Item.self).filter("name CONTAINS[c] '\(searchText)'").sorted(byKeyPath: sortBy, ascending: sortAscending)
                 } else {
                     // All items currently stored in the database
-                    return self.realm.objects(Item.self)
+                    return self.realm.objects(Item.self).sorted(byKeyPath: sortBy, ascending: sortAscending)
                 }
             }
         }
@@ -61,6 +61,8 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     var collectionDeleted = false
     var isSearching: Bool = false
     var searchText: String = ""
+    var sortAscending = true
+    var sortBy = "name"
     
     
     // MARK: UIViewController
@@ -120,6 +122,43 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         collectionVC.inventoryViewController = self
         self.present(collectionVC, animated: true, completion: nil)
     }
+    
+    @IBAction func sortPressed(_ sender: UIBarButtonItem) {
+        // Create an alert view with the sorting options
+        let alertController = UIAlertController(title: "", message: "Sort by:", preferredStyle: .alert)
+        let nameAsc = UIAlertAction(title: "Name - Ascending", style: .default) { (action) in
+            // Change the sorting direction to ascending and reload
+            self.sortBy = "name"
+            self.sortAscending = true
+            self.loadUI()
+        }
+        let nameDesc = UIAlertAction(title: "Name - Descending", style: .default) { (action) in
+            // Change the sorting direction to descending and reload
+            self.sortBy = "name"
+            self.sortAscending = false
+            self.loadUI()
+        }
+        let dateAsc = UIAlertAction(title: "Date Added - Ascending", style: .default) { (action) in
+            // Change the sorting direction to descending and reload
+            self.sortBy = "dateAdded"
+            self.sortAscending = true
+            self.loadUI()
+        }
+        let dateDesc = UIAlertAction(title: "Date Added - Descending", style: .default) { (action) in
+            // Change the sorting direction to descending and reload
+            self.sortBy = "dateAdded"
+            self.sortAscending = false
+            self.loadUI()
+        }
+        alertController.addAction(nameAsc)
+        alertController.addAction(nameDesc)
+        alertController.addAction(dateAsc)
+        alertController.addAction(dateDesc)
+        
+        // Present the alert
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {

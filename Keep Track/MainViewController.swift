@@ -65,12 +65,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func sortPressed(_ sender: UIBarButtonItem) {
         // Create an alert view with the sorting options
         let alertController = UIAlertController(title: "", message: "Sort by:", preferredStyle: .alert)
-        let nameAsc = UIAlertAction(title: "Name Ascending", style: .default) { (action) in
+        let nameAsc = UIAlertAction(title: "Name - Ascending", style: .default) { (action) in
             // Change the sorting direction to ascending and reload
             self.sortAscending = true
             self.loadUI()
         }
-        let nameDesc = UIAlertAction(title: "Name Descending", style: .default) { (action) in
+        let nameDesc = UIAlertAction(title: "Name - Descending", style: .default) { (action) in
             // Change the sorting direction to descending and reload
             self.sortAscending = false
             self.loadUI()
