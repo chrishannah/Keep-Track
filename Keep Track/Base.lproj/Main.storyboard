@@ -24,7 +24,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xKN-Bw-7jR">
                                 <rect key="frame" x="0.0" y="108" width="414" height="628"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90019253259999998" green="0.90910532990000004" blue="0.90910532990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="5lU-pQ-ISG">
                                     <size key="itemSize" width="130" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -80,7 +80,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="TuG-9a-7Oy"/>
                                 </constraints>
-                                <color key="tintColor" red="0.23898082970000001" green="0.68510895969999996" blue="0.98981815579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.0097891537930000008" green="0.074159428220000004" blue="0.14564165609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -120,7 +119,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="FYG-aO-MWi"/>
                                     <constraint firstAttribute="height" constant="44" id="gee-1F-l5y"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.90019253259999998" green="0.90910532990000004" blue="0.90910532990000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rQw-Fr-0Fq"/>
@@ -128,6 +127,7 @@
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="B9f-tA-u1c" firstAttribute="top" secondItem="tLY-2I-zXj" secondAttribute="bottom" id="7nR-Eg-6ZO"/>
                             <constraint firstAttribute="trailing" secondItem="B9f-tA-u1c" secondAttribute="trailing" id="97O-m6-Hha"/>
@@ -215,6 +215,7 @@
                                     <constraint firstAttribute="height" constant="30" id="UHs-LO-8jP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="x7u-LI-Obx"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -225,6 +226,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jQE-5I-ZFV" firstAttribute="leading" secondItem="oha-oA-cdQ" secondAttribute="leading" id="0af-4l-aCT"/>
                             <constraint firstItem="jrN-gY-4c5" firstAttribute="top" secondItem="jQE-5I-ZFV" secondAttribute="bottom" constant="12" id="2ld-dA-NYm"/>
@@ -382,6 +384,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sHI-ed-B3v" secondAttribute="trailing" id="0Jm-Ok-CGg"/>
                             <constraint firstItem="1Vw-Qv-Dzh" firstAttribute="leading" secondItem="erv-6o-9z9" secondAttribute="leading" id="4of-4w-CeT"/>
@@ -442,7 +445,7 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Nt-CY-neF">
                                 <rect key="frame" x="0.0" y="108" width="414" height="628"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.9001925325967951" green="0.90910532994923854" blue="0.90910532994923854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="8Vw-iN-r6q">
                                     <size key="itemSize" width="250" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -495,6 +498,7 @@
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2Nt-CY-neF" secondAttribute="trailing" id="5jA-hq-8UK"/>
                             <constraint firstItem="2Nt-CY-neF" firstAttribute="leading" secondItem="zwS-Jy-wxM" secondAttribute="leading" id="6fR-bU-NqM"/>
@@ -584,6 +588,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ljg-uG-ufZ"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -593,6 +598,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="AuJ-Ee-ePu" firstAttribute="leading" secondItem="xla-Bj-jCP" secondAttribute="leading" id="CRl-7z-ckh"/>
                             <constraint firstAttribute="trailing" secondItem="AuJ-Ee-ePu" secondAttribute="trailing" id="Hbd-Du-TYh"/>
