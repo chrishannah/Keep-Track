@@ -15,13 +15,38 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     let realm = try! Realm()
     var items: Results<Item> {
         get {
-            // If currently searching, show the filtered results, otherwise show all items
-            if isSearching {
-                // All items currently stored in the database that have the query text in the name
-                return self.realm.objects(Item.self).filter("name CONTAINS[c] '\(searchText)'")
+            // If Collection Primary key has been passed, return that object
+            if collectionKey != nil {
+                let collection = self.realm.object(ofType: Collection.self, forPrimaryKey: collectionKey!)
+                
+                // If currently searching, show the filtered results, otherwise show all items
+                if isSearching {
+                    // All items currently stored in the database that have the query text in the name
+                    return (collection?.items.filter("name CONTAINS[c] '\(searchText)'"))!
+                } else {
+                    // All items currently stored in the database
+                    return (collection?.items.filter("name != ''"))!
+                }
             } else {
-                // All items currently stored in the database
-                return self.realm.objects(Item.self)
+                // If currently searching, show the filtered results, otherwise show all items
+                if isSearching {
+                    // All items currently stored in the database that have the query text in the name
+                    return self.realm.objects(Item.self).filter("name CONTAINS[c] '\(searchText)'")
+                } else {
+                    // All items currently stored in the database
+                    return self.realm.objects(Item.self)
+                }
+            }
+        }
+    }
+    
+    var collection: Collection? {
+        get {
+            // If Collection Primary key has been passed, return that object
+            if collectionKey != nil {
+                return self.realm.object(ofType: Collection.self, forPrimaryKey: collectionKey!)!
+            } else {
+                return nil
             }
         }
     }
@@ -32,8 +57,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     // Variables
-    var collection: Collection? = nil
-    var filteredCollection: Collection? = nil
+    var collectionKey: String? = nil
     var collectionDeleted = false
     var isSearching: Bool = false
     var searchText: String = ""
@@ -60,7 +84,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func loadUI() {
         // Load the collection data into the UI
-        if collection != nil {
+        if collectionKey != nil {
             editButton.isEnabled = true
             inventoryTitle.topItem?.title = collection?.name.capitalizingFirstLetter()
         } else {
@@ -77,7 +101,7 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let addItemVC: AddItemViewController = (storyboard.instantiateViewController(withIdentifier: "AddItemViewController") as? AddItemViewController)!
     
-        if collection != nil {
+        if collectionKey != nil {
             addItemVC.collection = collection
         }
         
@@ -103,32 +127,21 @@ class InventoryViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // Return the amout of items in the selected collection, or if viewing all items, return the total count
-        if collection != nil {
-            return (collection?.items.count)!
-        } else {
-            return items.count
-        }
+        // Return the amout of items in the selected collection, or if viewing all items, return the total count (this is all done dynamically in the variable)
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Create ItemViewCell object for configuring
         let cell: ItemViewCell = inventoryCollectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! ItemViewCell
        
-        
         // Load Item for the specific Cell Index, and configure the cell with the relevant data.
-        var item: Item? = nil
+        let item = items[indexPath.row]
         
-        if collection != nil {
-            item = (collection?.items[indexPath.row])!
-        } else {
-            item = items[indexPath.row]
-        }
-        
-        cell.textLabel.text = item?.name.capitalizingFirstLetter()
+        cell.textLabel.text = item.name.capitalizingFirstLetter()
         
         // If an image has been added to the item, display it, otherwise display the standard "No Image" image
-        if let imageData = item?.image {
+        if let imageData = item.image {
             cell.imageView.image = UIImage(data: imageData as Data)
         } else {
             let image = UIImage(named: "NoImage")

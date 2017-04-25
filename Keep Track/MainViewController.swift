@@ -117,7 +117,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let collectionVC: InventoryViewController = storyboard.instantiateViewController(withIdentifier: "InventoryViewController") as! InventoryViewController
         
         if indexPath.row != collections.count {
-            collectionVC.collection = collections[indexPath.row]
+            collectionVC.collectionKey = collections[indexPath.row].key
         }
 
         self.present(collectionVC, animated: true, completion: nil)
