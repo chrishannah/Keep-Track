@@ -107,7 +107,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for a Collection" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-tA-u1c">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for an Item" translatesAutoresizingMaskIntoConstraints="NO" id="B9f-tA-u1c">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="FYG-aO-MWi"/>
