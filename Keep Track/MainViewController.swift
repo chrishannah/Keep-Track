@@ -18,10 +18,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             // If currently searching, show the filtered results, otherwise show all collections
             if isSearching {
                 // All collections currently stored in the database that have the query text in the name
-                return self.realm.objects(Collection.self).filter("name CONTAINS[c] '\(searchText)'")
+                return self.realm.objects(Collection.self).filter("name CONTAINS[c] '\(searchText)'").sorted(byKeyPath: "name", ascending: sortAscending)
             } else {
                 // All collections currently stored in the database
-                return self.realm.objects(Collection.self)
+                return self.realm.objects(Collection.self).sorted(byKeyPath: "name", ascending: sortAscending)
             }
         }
     }
@@ -32,6 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // Variables
     var isSearching: Bool = false
     var searchText: String = ""
+    var sortAscending = true
     
     // MARK: UIViewController
     
@@ -60,6 +61,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let collectionVC: AddCollectionViewController = storyboard.instantiateViewController(withIdentifier: "AddCollectionViewController") as! AddCollectionViewController
         self.present(collectionVC, animated: true, completion: nil)
     }
+    
+    @IBAction func sortPressed(_ sender: UIBarButtonItem) {
+        // Create an alert view with the sorting options
+        let alertController = UIAlertController(title: "", message: "Sort by:", preferredStyle: .alert)
+        let nameAsc = UIAlertAction(title: "Name Ascending", style: .default) { (action) in
+            // Change the sorting direction to ascending and reload
+            self.sortAscending = true
+            self.loadUI()
+        }
+        let nameDesc = UIAlertAction(title: "Name Descending", style: .default) { (action) in
+            // Change the sorting direction to descending and reload
+            self.sortAscending = false
+            self.loadUI()
+        }
+        alertController.addAction(nameAsc)
+        alertController.addAction(nameDesc)
+        
+        // Present the alert
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     
     // MARK: UICollectionViewDataSource
     
@@ -172,4 +194,5 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Resign Keyboard
         searchBar.resignFirstResponder()
     }
+
 }

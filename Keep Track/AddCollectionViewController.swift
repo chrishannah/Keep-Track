@@ -29,10 +29,7 @@ class AddCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If a collection was passed to the View Controller, load it in the UI
-        if collectionToEdit != nil {
-            loadCollection(collection: collectionToEdit!)
-        }
+        loadUI()
     }
     
     func loadUI() {
