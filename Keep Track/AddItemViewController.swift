@@ -129,6 +129,13 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         item.dateAdded = NSDate()
         let imageData: Data?
         
+        // Generate a unique primary key using a mix of the current date/time and the name
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .full
+        dateFormatter.dateStyle = .short
+        let dateString = dateFormatter.string(from: Date())
+        item.key = item.name + dateString
+        
         // Check for missing name, if blank display a warning
         if (item.name == "") {
             let alertController = UIAlertController(title: "Error", message: "Item must have a name.", preferredStyle: .alert)

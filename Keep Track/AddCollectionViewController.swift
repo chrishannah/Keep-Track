@@ -65,6 +65,13 @@ class AddCollectionViewController: UIViewController {
         let collection = Collection()
         collection.name = nameTextField.text!
         
+        // Generate a unique primary key using a mix of the current date/time and the name
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .full
+        dateFormatter.dateStyle = .short
+        let dateString = dateFormatter.string(from: Date())
+        collection.key = collection.name + dateString
+        
         // If no name was entered, display a warning
         if (collection.name == "") {
             let alertController = UIAlertController(title: "Error", message: "Collection must have a name.", preferredStyle: .alert)

@@ -12,16 +12,26 @@ import UIKit
 
 class Item: Object {
     
+    dynamic var key = ""
     dynamic var name = ""
     dynamic var notes = ""
     dynamic var image: NSData?
     dynamic var dateAdded = NSDate()
     
+    override static func primaryKey() -> String? {
+        return "key"
+    }
+
 }
 
 class Collection: Object {
     
+    dynamic var key = ""
     dynamic var name = ""
     let items = List<Item>()
+    
+    override static func primaryKey() -> String? {
+        return "key"
+    }
     
 }
