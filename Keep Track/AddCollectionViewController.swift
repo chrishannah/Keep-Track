@@ -102,6 +102,9 @@ class AddCollectionViewController: UIViewController {
         let alertController = UIAlertController(title: "Delete Collection", message: "Are you sure you want to delete \"\(collectionName)\"", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "OK", style: .default) { action in
             try! self.realm.write {
+                for item in (self.collectionToEdit?.items)! {
+                    self.realm.delete(item)
+                }
                 self.realm.delete(self.collectionToEdit!)
             }
             self.inventoryViewController?.collectionDeleted = true
