@@ -15,6 +15,8 @@
 		9D0057E11DE8555C00591D05 /* Keep_TrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0057E01DE8555C00591D05 /* Keep_TrackUITests.swift */; };
 		9D24FBE51EAC3EED007E3C5E /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */; };
 		9D24FBE81EAC426F007E3C5E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D24FBE71EAC426F007E3C5E /* Extensions.swift */; };
+		9D4C26F61EB0956A009708D6 /* ImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4C26F51EB0956A009708D6 /* ImagePicker.framework */; };
+		9D4C26F71EB09584009708D6 /* ImagePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D4C26F51EB0956A009708D6 /* ImagePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D58DAD51EAE1115003705BB /* AddCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */; };
 		9D7962D71E64633300259680 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D61E64633300259680 /* Database.swift */; };
 		9D7962D91E64A31000259680 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7962D81E64A31000259680 /* AddItemViewController.swift */; };
@@ -27,8 +29,6 @@
 		9DDAFA361EA7C9800019AE21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDAFA351EA7C9800019AE21 /* MainViewController.swift */; };
 		9DE1B7601EA80D1D007B1194 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */; };
 		9DE347B21E6DAA7E008D70E0 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */; };
-		9DFF39351EA9069E004EA005 /* ImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF39341EA9069E004EA005 /* ImagePicker.framework */; };
-		9DFF39361EA9069E004EA005 /* ImagePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF39341EA9069E004EA005 /* ImagePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9D4C26F71EB09584009708D6 /* ImagePicker.framework in Embed Frameworks */,
 				9DDAFA331EA7C59D0019AE21 /* RealmSwift.framework in Embed Frameworks */,
-				9DFF39361EA9069E004EA005 /* ImagePicker.framework in Embed Frameworks */,
 				9DDAFA311EA7C59D0019AE21 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -79,6 +79,7 @@
 		9D0057E21DE8555C00591D05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D24FBE41EAC3EED007E3C5E /* ItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
 		9D24FBE71EAC426F007E3C5E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9D4C26F51EB0956A009708D6 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImagePicker.framework; path = Carthage/Build/iOS/ImagePicker.framework; sourceTree = "<group>"; };
 		9D58DAD41EAE1115003705BB /* AddCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCollectionViewController.swift; sourceTree = "<group>"; };
 		9D7962D61E64633300259680 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		9D7962D81E64A31000259680 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +90,6 @@
 		9DDAFA351EA7C9800019AE21 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9DE347B11E6DAA7E008D70E0 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		9DFF39341EA9069E004EA005 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImagePicker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 			files = (
 				9DE1B7601EA80D1D007B1194 /* MobileCoreServices.framework in Frameworks */,
 				9DDAFA301EA7C59D0019AE21 /* Realm.framework in Frameworks */,
-				9DFF39351EA9069E004EA005 /* ImagePicker.framework in Frameworks */,
 				9DDAFA2F1EA7C5980019AE21 /* RealmSwift.framework in Frameworks */,
+				9D4C26F61EB0956A009708D6 /* ImagePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +216,7 @@
 		9DE1B75E1EA80D1D007B1194 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DFF39341EA9069E004EA005 /* ImagePicker.framework */,
+				9D4C26F51EB0956A009708D6 /* ImagePicker.framework */,
 				9DDAFA2C1EA7C5980019AE21 /* Realm.framework */,
 				9DDAFA2D1EA7C5980019AE21 /* RealmSwift.framework */,
 				9DE1B75F1EA80D1D007B1194 /* MobileCoreServices.framework */,
@@ -527,6 +527,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Keep Track/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Keep Track/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

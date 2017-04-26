@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-u7-2W0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YsV-u7-2W0">
                                                     <rect key="frame" x="0.0" y="110" width="130" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="9P8-KK-st7"/>
@@ -408,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4EQ-li-6DZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="369" y="307"/>
+            <point key="canvasLocation" x="369" y="379"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="NDB-R9-m0o">
@@ -460,7 +460,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UK7-Se-VUh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UK7-Se-VUh">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -554,13 +554,35 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="tUl-GA-F3d">
-                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="k5U-TQ-v94"/>
+                                    <constraint firstAttribute="height" constant="300" id="7A9-JA-PcI"/>
+                                    <constraint firstAttribute="height" constant="400" id="WIX-jr-JaC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="k5U-TQ-v94">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="600" id="yie-ld-EQt"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WIX-jr-JaC"/>
+                                        <exclude reference="yie-ld-EQt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="yie-ld-EQt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="WIX-jr-JaC"/>
+                                        <exclude reference="k5U-TQ-v94"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5Aw-ff-lyd">
-                                <rect key="frame" x="8" y="276" width="398" height="414"/>
+                                <rect key="frame" x="8" y="376" width="398" height="314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added on 1st January 2016" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx5-EW-CSf">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20"/>
@@ -572,7 +594,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the description of the specific item, it can span up to three lines. It is editable, and specific to each item." lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjl-n9-9pO">
-                                        <rect key="frame" x="0.0" y="20" width="398" height="394"/>
+                                        <rect key="frame" x="0.0" y="20" width="398" height="294"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -614,6 +636,16 @@
                             <constraint firstItem="5Aw-ff-lyd" firstAttribute="top" secondItem="tUl-GA-F3d" secondAttribute="bottom" constant="12" id="o64-Rc-qTL"/>
                             <constraint firstItem="hM8-Ky-pjt" firstAttribute="top" secondItem="AuJ-Ee-ePu" secondAttribute="bottom" constant="8" id="xxD-4o-qjZ"/>
                         </constraints>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="tUl-GA-F3d"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="tUl-GA-F3d"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="Gx5-EW-CSf" id="UOf-Sj-jao"/>
@@ -624,10 +656,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rb-NF-JM3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="-356"/>
+            <point key="canvasLocation" x="369" y="-356"/>
         </scene>
     </scenes>
     <resources>
         <image name="NoImage" width="400" height="400"/>
     </resources>
+    <color key="tintColor" red="0.74520319700000004" green="0.01482320204" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

@@ -260,12 +260,8 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     // MARK: ImagePickerDelegate
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        self.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         if images.count > 0 {
             imageView.image = images[0]
             itemHasImage = true
@@ -273,11 +269,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        self.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        self.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         if images.count > 0 {
             imageView.image = images[0]
             itemHasImage = true
