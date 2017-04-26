@@ -48,8 +48,11 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mo-ib-pKb">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mo-ib-pKb">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="TbL-Nv-bKE"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -57,7 +60,6 @@
                                         <constraints>
                                             <constraint firstItem="YsV-u7-2W0" firstAttribute="leading" secondItem="U9q-dy-D3H" secondAttribute="leading" id="BUi-kR-MrL"/>
                                             <constraint firstAttribute="trailing" secondItem="7mo-ib-pKb" secondAttribute="trailing" id="H0s-pV-2EH"/>
-                                            <constraint firstItem="YsV-u7-2W0" firstAttribute="top" secondItem="7mo-ib-pKb" secondAttribute="bottom" id="apJ-vN-L72"/>
                                             <constraint firstItem="7mo-ib-pKb" firstAttribute="leading" secondItem="U9q-dy-D3H" secondAttribute="leading" id="bAc-LY-a3P"/>
                                             <constraint firstAttribute="bottom" secondItem="YsV-u7-2W0" secondAttribute="bottom" id="d0f-TZ-LQd"/>
                                             <constraint firstAttribute="trailing" secondItem="YsV-u7-2W0" secondAttribute="trailing" id="kOx-d6-Fma"/>
